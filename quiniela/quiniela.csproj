@@ -160,58 +160,65 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbContext.Context.cs">
+    <Compile Include="Models\dataBaseContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbContext.Context.tt</DependentUpon>
+      <DependentUpon>dataBaseContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbContext.cs">
+    <Compile Include="Models\dataBaseContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>dataBaseContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbContext.Designer.cs">
+    <Compile Include="Models\dataBaseContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbContext.edmx</DependentUpon>
+      <DependentUpon>dataBaseContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\tblUsers.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>dataBaseContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Models\dbContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>dbContext.Context.cs</LastGenOutput>
-      <DependentUpon>dbContext.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\dbContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbContext.edmx</DependentUpon>
-      <LastGenOutput>dbContext.cs</LastGenOutput>
-    </Content>
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\dbContext.edmx">
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <EntityDeploy Include="Models\dataBaseContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>dataBaseContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\dbContext.edmx.diagram">
-      <DependentUpon>dbContext.edmx</DependentUpon>
+    <Content Include="Models\dataBaseContext.edmx.diagram">
+      <DependentUpon>dataBaseContext.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Models\dataBaseContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dataBaseContext.edmx</DependentUpon>
+      <LastGenOutput>dataBaseContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\dataBaseContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dataBaseContext.edmx</DependentUpon>
+      <LastGenOutput>dataBaseContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -236,20 +243,17 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\crearUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />

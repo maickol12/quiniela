@@ -11,14 +11,35 @@ namespace quiniela.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class tblUsers
     {
         public int idUser { get; set; }
+        [Required(ErrorMessage = "Nombre obligatorio")]
+        [Display(Name = "Nombre")]
         public string vName { get; set; }
+        [Required(ErrorMessage = "Apellidos obligatorio")]
+        [Display(Name = "Apellidos")]
         public string vLastName { get; set; }
+        [Required(ErrorMessage = "Usuario obligatorio")]
+        [Display(Name = "Usuario")]
         public string vUserName { get; set; }
+        [Required(ErrorMessage = "Contraseña obligatoria")]
+        [Display(Name = "Contraseña")]        
+        [DataType(DataType.Password)]
         public string vPassword { get; set; }
+
+        [DefaultValue(true)]
         public Nullable<bool> bActive { get; set; }
+
+        [Display(Name = "Confirmar contraseña")]
+        [Compare("vPassword",ErrorMessage = "Las contraseñas ingresadas no coinciden")]
+        [DataType(DataType.Password)]
+        [NotMapped]
+        public string ConfirmPassword { get; set; }
+        
     }
 }
