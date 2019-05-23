@@ -11,35 +11,29 @@ namespace quiniela.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     public partial class tblUsers
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblUsers()
+        {
+            this.tblRole = new HashSet<tblRole>();
+        }
+    
         public int idUser { get; set; }
-        [Required(ErrorMessage = "Nombre obligatorio")]
-        [Display(Name = "Nombre")]
         public string vName { get; set; }
-        [Required(ErrorMessage = "Apellidos obligatorio")]
-        [Display(Name = "Apellidos")]
         public string vLastName { get; set; }
-        [Required(ErrorMessage = "Usuario obligatorio")]
-        [Display(Name = "Usuario")]
         public string vUserName { get; set; }
-        [Required(ErrorMessage = "Contraseña obligatoria")]
-        [Display(Name = "Contraseña")]        
-        [DataType(DataType.Password)]
         public string vPassword { get; set; }
-
-        [DefaultValue(true)]
         public Nullable<bool> bActive { get; set; }
-
-        [Display(Name = "Confirmar contraseña")]
-        [Compare("vPassword",ErrorMessage = "Las contraseñas ingresadas no coinciden")]
-        [DataType(DataType.Password)]
+        public string vProfilePicture { get; set; }
         [NotMapped]
-        public string ConfirmPassword { get; set; }
-        
+        [Compare("vPassword", ErrorMessage = "Las contraseñas no coinciden")]
+        public string vConfirmPassword { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblRole> tblRole { get; set; }
+
     }
 }

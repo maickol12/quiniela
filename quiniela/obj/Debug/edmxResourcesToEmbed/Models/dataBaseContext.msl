@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quinielaModelStoreContainer" CdmEntityContainer="databaseModelContext">
+    <EntitySetMapping Name="tblRole">
+      <EntityTypeMapping TypeName="quinielaModel.tblRole">
+        <MappingFragment StoreEntitySet="tblRole">
+          <ScalarProperty Name="bActive" ColumnName="bActive" />
+          <ScalarProperty Name="vNameRol" ColumnName="vNameRol" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="quinielaModel.tblUsers">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="vProfilePicture" ColumnName="vProfilePicture" />
+          <ScalarProperty Name="bActive" ColumnName="bActive" />
+          <ScalarProperty Name="vPassword" ColumnName="vPassword" />
+          <ScalarProperty Name="vUserName" ColumnName="vUserName" />
+          <ScalarProperty Name="vLastName" ColumnName="vLastName" />
+          <ScalarProperty Name="vName" ColumnName="vName" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tblUserRole" TypeName="quinielaModel.tblUserRole" StoreEntitySet="tblUserRole">
+      <EndProperty Name="tblUsers">
+        <ScalarProperty Name="idUser" ColumnName="idUser" />
+      </EndProperty>
+      <EndProperty Name="tblRole">
+        <ScalarProperty Name="idRol" ColumnName="idRole" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quinielaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="databaseModelContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblRole" EntityType="quinielaModel.tblRole" />
+    <EntitySet Name="tblUsers" EntityType="quinielaModel.tblUsers" />
+    <AssociationSet Name="tblUserRole" Association="quinielaModel.tblUserRole">
+      <End Role="tblRole" EntitySet="tblRole" />
+      <End Role="tblUsers" EntitySet="tblUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tblRole">
+    <Key>
+      <PropertyRef Name="idRol" />
+    </Key>
+    <Property Name="idRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vNameRol" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="bActive" Type="Boolean" />
+    <NavigationProperty Name="tblUsers" Relationship="quinielaModel.tblUserRole" FromRole="tblRole" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblUsers">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="vLastName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="vUserName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="vPassword" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="bActive" Type="Boolean" />
+    <Property Name="vProfilePicture" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblRole" Relationship="quinielaModel.tblUserRole" FromRole="tblUsers" ToRole="tblRole" />
+  </EntityType>
+  <Association Name="tblUserRole">
+    <End Type="quinielaModel.tblRole" Role="tblRole" Multiplicity="*" />
+    <End Type="quinielaModel.tblUsers" Role="tblUsers" Multiplicity="*" />
+  </Association>
+</Schema>
