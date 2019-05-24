@@ -38,6 +38,24 @@ namespace quiniela.Controllers
                 {
                     Session["idUser"]  = user.idUser; 
                     Session["isLogin"] = true;
+                    Session["vNameUser"] = user.vName + " " + user.vLastName;
+                    if (user.tblRole.Count > 0)
+                    {
+                        Session["vNameRol"] = user.tblRole.FirstOrDefault().vNameRol;
+                    }
+                    else
+                    {
+                        Session["vNameRol"] = "";
+                    }
+                    if (String.IsNullOrEmpty(user.vProfilePicture))
+                    {
+                        Session["vProfilePicture"] = "https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg";
+                    }
+                    else
+                    {
+                        var path = "~/Content/profilePicture/" + user.vProfilePicture;
+                        Session["vProfilePicture"] = path;
+                    }
                     return RedirectToAction("index","Dashboard");
                 }
             }

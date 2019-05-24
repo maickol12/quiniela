@@ -1,0 +1,40 @@
+﻿@model IEnumerable<quiniela.Models.tblUsers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/menu.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.vName)</th>
+            <th>@Html.DisplayNameFor(model => model.vLastName)</th>
+            <th>@Html.DisplayNameFor(model => model.vUserName)</th>
+            <th>@Html.DisplayNameFor(model => model.bActive)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.vName)</td>
+                <td>@Html.DisplayFor(modelItem => item.vLastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.vUserName)</td>
+                <td>
+                    @if (Convert.ToBoolean(@item.bActive))
+                    {
+                        <input type="checkbox" class="form-check" checked disabled />
+                    }
+                    else
+                    {
+                        <input type="checkbox" class="form-check" disabled />
+                    }
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

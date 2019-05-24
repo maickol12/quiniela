@@ -21,12 +21,17 @@ namespace quiniela.Models
         {
             this.tblRole = new HashSet<tblRole>();
         }
-    
+        [Display(Name = "ID")]
         public int idUser { get; set; }
+        [Display(Name = "Nombre")]
         public string vName { get; set; }
+        [Display(Name = "Apellidos")]
         public string vLastName { get; set; }
+        [Display(Name = "Usuario")]
         public string vUserName { get; set; }
+        [Display(Name = "Contraseña")]
         public string vPassword { get; set; }
+        [Display(Name = "Activo")]
         public Nullable<bool> bActive { get; set; }
         public string vProfilePicture { get; set; }
         [NotMapped]

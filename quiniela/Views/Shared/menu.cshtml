@@ -18,22 +18,21 @@
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
                 <div class="sidebar-brand">
-                    <a href="#">pro sidebar</a>
+                    <a href="#">DashBoard</a>
                     <div id="close-sidebar">
                         <i class="fas fa-times"></i>
                     </div>
                 </div>
                 <div class="sidebar-header">
                     <div class="user-pic">
-                        <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-                             alt="User picture">
+                        <img class="img-responsive img-rounded" src="@Url.Content(Session["vProfilePicture"].ToString())" alt="User picture">
                     </div>
                     <div class="user-info">
                         <span class="user-name">
                         
-                            <strong>@ViewBag.vNombreDeUsuario</strong>
+                            <strong>@Session["vNameUser"]</strong>
                         </span>
-                        <span class="user-role">@ViewBag.vNameRol</span>
+                        <span class="user-role">@Session["vNameRol"]</span>
                         <span class="user-status">
                             <i class="fa fa-circle"></i>
                             <span>Online</span>
@@ -60,9 +59,9 @@
                             <span>General</span>
                         </li>
                         <li class="sidebar-dropdown">
-                            <a href="#">
+                            <a href="@Url.Action("index","userAdministration")">
                                 <i class="fa fa-tachometer-alt"></i>
-                                <span>Dashboard</span>
+                                <span>Usuarios</span>
                                 <span class="badge badge-pill badge-warning">New</span>
                             </a>
                             <div class="sidebar-submenu">
@@ -208,7 +207,7 @@
                     <i class="fa fa-cog"></i>
                     <span class="badge-sonar"></span>
                 </a>
-                <a href="#">
+                <a href="@Url.Action("logout","dashboard")">
                     <i class="fa fa-power-off"></i>
                 </a>
             </div>
@@ -216,7 +215,6 @@
         <!-- sidebar-wrapper  -->
         <main class="page-content">
             <div class="container-fluid">
-                <h2>Panel de adminitración</h2>
                 @RenderBody()
             </div>
         </main>
