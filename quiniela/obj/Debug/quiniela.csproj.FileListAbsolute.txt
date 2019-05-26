@@ -202,3 +202,9 @@ C:\Users\ROCM9\Documents\GITHUB\quiniela\quiniela\obj\Debug\quiniela.csproj.Core
 C:\Users\ROCM9\Documents\GITHUB\quiniela\quiniela\obj\Debug\quiniela.csproj.CopyComplete
 C:\Users\ROCM9\Documents\GITHUB\quiniela\quiniela\obj\Debug\quiniela.dll
 C:\Users\ROCM9\Documents\GITHUB\quiniela\quiniela\obj\Debug\quiniela.pdb
+C:\Users\ROCM9\Documents\GITHUB\quiniela\quiniela\bin\PagedList.dll
+C:\Users\ROCM9\Documents\GITHUB\quiniela\quiniela\bin\PagedList.Mvc.dll
+C:\Users\ROCM9\Documents\GITHUB\quiniela\quiniela\bin\PagedList.xml
+C:\Users\ROCM9\Documents\GITHUB\quiniela\quiniela\bin\PagedList.Mvc.xml
+C:\Users\ROCM9\Documents\GITHUB\quiniela\quiniela\bin\X.PagedList.dll
+C:\Users\ROCM9\Documents\GITHUB\quiniela\quiniela\bin\X.PagedList.Mvc.dll

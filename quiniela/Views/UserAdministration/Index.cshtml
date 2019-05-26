@@ -1,18 +1,25 @@
-﻿@model IEnumerable<quiniela.Models.tblUsers>
+﻿@model PagedList.IPagedList<quiniela.Models.tblUsers>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/menu.cshtml";
 }
+@using PagedList.Mvc;
+@using PagedList;
+@using X.PagedList.Mvc.Bootstrap4;
 
-<h2>Index</h2>
-
+@using (Html.BeginForm("index", "UserAdministration", FormMethod.Get))
+{
+    @Html.RadioButton("searchBy", "Name", true); <text>Name</text>
+    @Html.RadioButton("searchBy", "Gender", false);<text>Gender</text>
+    @Html.TextBox("search"); <input type="submit" value="search" />
+}
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model => model.vName)</th>
-            <th>@Html.DisplayNameFor(model => model.vLastName)</th>
-            <th>@Html.DisplayNameFor(model => model.vUserName)</th>
-            <th>@Html.DisplayNameFor(model => model.bActive)</th>
+            <th>@Html.ActionLink("Nombre","index",new { sortOrder = ViewBag.sortVname })</th>
+            <th>@Html.ActionLink("Apellidos","index",new { sortOrder = ViewBag.sortVlastName})</th>
+            <th>@Html.ActionLink("Usuario", "index", new { sortOrder = ViewBag.SortvUsuario })</th>
+            <th>@Html.LabelFor(model => model.First().bActive)</th>
         </tr>
     </thead>
     <tbody>
@@ -38,3 +45,8 @@
         }
     </tbody>
 </table>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </ul>
+</nav>
