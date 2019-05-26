@@ -22,7 +22,6 @@ namespace quiniela.Controllers
             ViewBag.sortVname        = (sortOrder == "vNameAsc") ? "vNameDesc" : "vNameAsc";
             ViewBag.sortVlastName    = (sortOrder == "vLastNameAsc")? "vLastNameDesc": "vLastNameAsc";
             ViewBag.SortvUsuario     = (sortOrder == "vUsuarioAsc")?"vUsuarioDesc":"vUsuarioAsc";
-
             using (var db = new databaseModelContext())
             {
 
