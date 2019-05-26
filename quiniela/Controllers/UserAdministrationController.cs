@@ -27,7 +27,6 @@ namespace quiniela.Controllers
             {
                 var users = from s in db.tblUsers
                             select s;
-
                 
                 switch (sortOrder)
                 {
